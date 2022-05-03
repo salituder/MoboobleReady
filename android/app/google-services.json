@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "740618512325",
+    "project_id": "mobooble-14ba2",
+    "storage_bucket": "mobooble-14ba2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:740618512325:android:e534603cf5e06f81118dac",
+        "android_client_info": {
+          "package_name": "com.example.mobooble"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "740618512325-rpbc6jebm6mbgvq9sl8qdtpglj5m8qri.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtmeN8M0CtbaSP8UkT6hlOlA_c-OIsxCI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "740618512325-rpbc6jebm6mbgvq9sl8qdtpglj5m8qri.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
