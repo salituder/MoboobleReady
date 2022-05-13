@@ -1,14 +1,14 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:mobooble/domain/user.dart';
+import 'package:mobooble/domain/user.dart' as my;
 
 class AuthService{
   final FirebaseAuth _fAuth = FirebaseAuth.instance;
 
-  Future<User> signInWithEmailAndPassword(String email, String password) async {
+  Future<my.User> signInWithEmailAndPassword(String email, String password) async {
     try{
-      AuthResult result = await _fAuth.signInWithEmailAndPassword(email: email, password: password);
-      FirebaseUser user = result.user;
-      return User.fromFirebase(user);
+      UserCredential result = await _fAuth.signInWithEmailAndPassword(email: email, password: password);
+      my.User user = my.User(result.user.uid);
+      return my.User(user.id);
 
     }catch(e){
       print(e);
@@ -22,8 +22,7 @@ class AuthService{
 
   }
 
-  Stream<User> get currentUser{
-    return _fAuth.onAuthStateChanged
-        .map((FirebaseUser user) => user != null ? User.fromFirebase(user) : null);
+  Stream<my.User> get currentUser{
+    return _fAuth.authStateChanges().map((event) => event != null ? my.User(event.uid) : null);
   }
 }

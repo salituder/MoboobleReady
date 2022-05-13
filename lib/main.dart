@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:firebase_core/firebase_core.dart';
 import 'package:mobooble/domain/user.dart';
 import 'package:mobooble/screens/landing.dart';
 import 'package:flutter/material.dart';
@@ -7,7 +8,13 @@ import 'package:mobooble/services/auth.dart';
 import 'package:provider/provider.dart';
 
 
-void main() => runApp(MoboobleApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(MoboobleApp());
+}
+
+
 
 class MoboobleApp extends StatelessWidget{
 

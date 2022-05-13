@@ -24,8 +24,8 @@ class _HomePageState extends State<HomePage> {
         appBar: AppBar(
           centerTitle: true,
             backgroundColor: Colors.white12,
-          title: Text('Mobooble'),
-          leading: Icon(Icons.man_outlined),
+          title: const Text('Mobooble'),
+          leading: const Icon(Icons.man_outlined),
         ),
         body: _currentIndex == 0 ? Groupslist() : Profile() , //проверка на "состояние"
     bottomNavigationBar: SalomonBottomBar(

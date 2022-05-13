@@ -129,6 +129,8 @@ AuthService _authService = AuthService();
             fontSize: 16.0
           );
         }else{
+        // if user exist / create
+
         _emailController.clear();
         _passwordController.clear();
       }
