@@ -36,6 +36,7 @@ dependencies:
   firebase_core_web:
   firebase_auth_web:
   salomon_bottom_bar: ^3.3.0
+  flutter_form_builder: ^3.8.3
   flutter:
     sdk: flutter
 
