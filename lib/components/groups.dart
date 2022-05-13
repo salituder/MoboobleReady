@@ -26,7 +26,7 @@ class Group {
 //  }
 //
 // class Student{
-//   String notes;
+//   String notes
 //   List<Marks> mark;
 //
 //   Student({this.mark, this.notes});
