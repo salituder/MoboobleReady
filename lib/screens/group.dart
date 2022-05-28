@@ -36,11 +36,13 @@ class _GroupPageState extends State<GroupPage> {
         floatingActionButton: const FloatingActionButton.extended(
           label: Text("Добавить ученика"),
         ),
-        backgroundColor: Colors.red,
+        backgroundColor: const Color.fromRGBO(83, 83, 83, 1.0),
         body: Container(
+
           width: MediaQuery.of(context).size.width * .95,
           child: Column(
             children: [
+
               FutureBuilder(
                 /*
                 future: Future.wait([FirebaseFirestore.instance
@@ -62,12 +64,14 @@ class _GroupPageState extends State<GroupPage> {
                           Student(student.group, student.name, id: data[i].id));
                     }
                     return ListView.separated(
+
                         itemCount: students.length,
                         shrinkWrap: true,
                         separatorBuilder: (context, index) =>
                             const SizedBox(height: 20),
                         itemBuilder: (context, index) {
                           double average = 0.0;
+
                           return FutureBuilder(
                             future: FirebaseFirestore.instance
                                 .collection('Mark')
@@ -89,18 +93,20 @@ class _GroupPageState extends State<GroupPage> {
                                 }
                                 average /= marks.length;
                                 return InkWell(
+
                                   onTap: () {
                                   },
                                   child: Container(
                                     height: 80,
                                     width:
                                         MediaQuery.of(context).size.width * .95,
+
                                     child: Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Text(students[index].name),
-                                        Text(average.toString())
+                                        Text(students[index].name, textScaleFactor: 2,),
+                                        Text(average.toString(), textScaleFactor: 2,)
                                       ],
                                     ),
                                   ),

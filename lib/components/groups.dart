@@ -25,7 +25,6 @@ class _GroupslistState extends State<Groupslist> {
 
             child: Container(
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-              // decoration: BoxDecoration(color: Color.fromRGBO(10, 10, 10, 1)),
 
               height: MediaQuery.of(context).size.height * 0.3,
               child: Column(
@@ -39,9 +38,10 @@ class _GroupslistState extends State<Groupslist> {
                     children: [
                       const Text(
                         'Введите название группы..',
-                        style: TextStyle(color: Colors.black),
+                        style: TextStyle(color: Colors.black, fontSize: 22),
                       ),
                       IconButton(
+
                         onPressed: () {
                           if (_controller.text.isNotEmpty) {
                             Group grop = Group(_controller.text);
@@ -61,12 +61,7 @@ class _GroupslistState extends State<Groupslist> {
                 ],
               ),
               decoration: const BoxDecoration(
-
-                borderRadius: BorderRadius.only(
-
-                  topLeft: Radius.circular(20),
-                  topRight: Radius.circular(20),
-                ),
+                color: const Color.fromRGBO(101, 101, 101, 1.0),
               ),
             ),
           );
@@ -75,7 +70,7 @@ class _GroupslistState extends State<Groupslist> {
 
   Widget inputText(TextEditingController _controller) {
     return TextField(
-      style: const TextStyle(color: Colors.black),
+      style: const TextStyle(color: Colors.black, fontSize: 30),
       controller: _controller,
       decoration: const InputDecoration.collapsed(
           hintText: "Введите название группы..."),
@@ -86,11 +81,13 @@ class _GroupslistState extends State<Groupslist> {
   Widget build(BuildContext context) {
     return Container(
       child: Scaffold(
+
         floatingActionButton: FloatingActionButton.extended(
           onPressed: () => _showCreateGroupDialog(),
           label: Text("Добавить группу") ,
         ),
         body: Container(
+          decoration: BoxDecoration(color: Color.fromRGBO(10, 10, 10, 1)),
           width: MediaQuery.of(context).size.width * .95,
           height: MediaQuery.of(context).size.height * .95,
           child: Column(
@@ -121,6 +118,7 @@ class _GroupslistState extends State<Groupslist> {
                         itemBuilder: (context, index) {
 
                           return InkWell(
+
                             onTap: () {
                               Navigator.push(
                                 context,
@@ -133,8 +131,11 @@ class _GroupslistState extends State<Groupslist> {
                             child: Container(
                               child: Text(groups[index].title),
                               height: 55,
+
                               width: MediaQuery.of(context).size.width,
-                              color: Colors.white,
+                                decoration: BoxDecoration(color: Color.fromRGBO(
+                                    191, 190, 190, 1.0)),
+
                             ),
                           );
                         },
